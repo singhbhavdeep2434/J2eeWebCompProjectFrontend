@@ -1,0 +1,106 @@
+/* Login Page Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+  padding: 0 20px; /* Add some space from the edges */
+}
+
+/* Card styling */
+.card {
+  width: 400px; /* Increased width for better layout on desktop */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 2rem; /* Added more padding inside the card */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Increased shadow for better contrast */
+}
+
+/* Card Header */
+.card-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Card Title */
+.card-title {
+  font-size: 2rem; /* Increased font size for better visibility */
+  font-weight: bold;
+  color: #333; /* Darker color for better contrast */
+}
+
+/* Form Group styling */
+.form-group {
+  margin-bottom: 1.5rem; /* Increased space between input fields */
+}
+
+/* Input fields styling */
+.input {
+  width: 100%;
+  padding: 0.9rem; /* Increased padding for easier typing */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Button styling */
+.button {
+  width: 100%;
+  padding: 1rem; /* Larger padding for better button size */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem; /* Slightly larger font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Button hover effect */
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Alert box styling */
+.alert {
+  margin-bottom: 1.5rem;
+  padding: 0.9rem;
+  background-color: #ffe5e5;
+  color: #d9534f;
+  border: 1px solid #d9534f;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Existing styles remain unchanged */
+
+/* Styling for the redirect container */
+.redirect-container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Style for the link/button to register */
+.link-button {
+  background: none;
+  color: #646cff;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-button:hover {
+  color: #535bf2;
+}
+
+
+/* Responsive Design for larger screens */
+@media (min-width: 768px) {
+  .login-container {
+    padding: 0 50px; /* Add more padding for larger screens */
+  }
+}
