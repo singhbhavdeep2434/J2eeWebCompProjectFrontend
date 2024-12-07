@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import LoginPage from './components/pages/LoginPage';
 import CoursesPage from './components/pages/CoursesPage';
 import SignUpPage from './components/pages/SignupPage';  // Import SignUpPage
+import DashboardPage from './components/pages/DashboardPage';
 
 const App = () => {
-  // Optional: Add a protected route component
+
   const PrivateRoute = ({ children }) => {
     const token = localStorage.getItem("authToken");
     return token ? children : <Navigate to="/login" replace />;
@@ -29,6 +30,14 @@ const App = () => {
             </PrivateRoute>
           } 
         />
+
+        <Route path="/dashboard" element={<DashboardPage />} />
+
+        <Route path="/create-user" element={<div>Create User Page</div>} />
+        <Route path="/show-users" element={<div>Show All Users Page</div>} />
+        <Route path="/create-course" element={<div>Create Course Page</div>} />
+        <Route path="/show-courses" element={<div>Show All Courses Page</div>} />
+        <Route path="/show-enrollments" element={<div>Show All Enrollments Page</div>} />
         
         {/* Redirect to login page by default */}
         <Route path="/" element={<Navigate to="/login" replace />} />

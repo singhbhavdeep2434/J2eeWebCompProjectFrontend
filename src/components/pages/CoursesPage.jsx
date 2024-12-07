@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchCourses } from '../services/courseService';
-import '../styles/CoursesPage.css';  
+import '../styles/CoursesPage.css';  // Ensure CSS file exists and is correctly styled
 
 const CoursesPage = () => {
   const [courses, setCourses] = useState([]);

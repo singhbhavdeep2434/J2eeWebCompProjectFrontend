@@ -17,7 +17,7 @@ const LoginPage = () => {
       const token = await loginUser(username, password);
       console.log(token);
       localStorage.setItem('authToken', token);
-      navigate('/courses');
+      navigate('/dashboard');
     } catch (error) {
       setError('An error occurred during login.');
       console.error('Login error:', error);
@@ -72,3 +72,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+   
