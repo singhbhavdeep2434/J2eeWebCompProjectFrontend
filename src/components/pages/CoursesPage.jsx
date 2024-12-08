@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchCourses } from '../services/courseService';
-import '../styles/CoursesPage.css';  // Ensure CSS file exists and is correctly styled
+import '../styles/CoursesPage.css'; 
+import NavBar from '../NavBar';
 
 const CoursesPage = () => {
   const [courses, setCourses] = useState([]);
@@ -47,10 +48,11 @@ const CoursesPage = () => {
 
   return (
     <div className="container">
+      <NavBar handleLogout={handleLogout} />
       <div className="card">
         <div className="card-header">
-          <h2 className="card-title">Courses</h2>
-          <button onClick={handleLogout}>Logout</button>
+          {/* <h2 className="card-title">Courses</h2> */}
+          {/* <button onClick={handleLogout}>Logout</button> */}
         </div>
         <div className="card-content">
           {error && (

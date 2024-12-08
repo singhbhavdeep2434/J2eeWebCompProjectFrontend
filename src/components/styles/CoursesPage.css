@@ -3,7 +3,8 @@
   max-width: 1200px; /* Ensures the content doesn't stretch too wide */
   margin: 0 auto; /* Centers the container */
   padding: 20px;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
 }
 
 /* Card Styling */
@@ -13,7 +14,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for desktop */
   padding: 20px;
   margin-top: 20px; /* Space from top */
-  align-items: center;
+  /* display: flex; */
+  align-self: center;
 }
 
 /* Card Header */

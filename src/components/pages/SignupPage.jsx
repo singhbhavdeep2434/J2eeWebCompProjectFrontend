@@ -44,7 +44,7 @@ const SignupPage = () => {
     <div className="signup-container">
       <div className="card">
         <div className="card-header">
-          <h2 className="card-title">Sign Up</h2>
+          {/* <h2 className="card-title">Sign Up</h2> */}
         </div>
         <div className="card-content">
           <form onSubmit={handleSignup}>
