@@ -6,6 +6,7 @@ import SignUpPage from './components/pages/SignupPage';  // Import SignUpPage
 import DashboardPage from './components/pages/DashboardPage';
 import ShowUsers from './components/pages/ShowUsers';
 import CreateCoursePage from './components/pages/CreateCoursePage';
+import ShowEnrollmentsPage from './components/pages/ShowEnrollmentsPage';
 
 const App = () => {
 
@@ -39,7 +40,7 @@ const App = () => {
         <Route path="/show-users" element={<ShowUsers />} />
         <Route path="/create-course" element={<CreateCoursePage />} />
         <Route path="/show-courses" element={<div>Show All Courses Page </div>} />
-        <Route path="/show-enrollments" element={<div>Show All Enrollments Page</div>} />
+        <Route path="/show-enrollments" element={<ShowEnrollmentsPage />} />
         
         {/* Redirect to login page by default */}
         <Route path="/" element={<Navigate to="/login" replace />} />

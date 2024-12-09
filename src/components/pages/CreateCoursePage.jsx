@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import NavBar from '../NavBar';
 
 const CreateCoursePage = () => {
   const navigate = useNavigate();
@@ -61,6 +62,7 @@ const CreateCoursePage = () => {
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
+        <NavBar/>
       <h1>Create a New Course</h1>
       {error && <div style={{ color: 'red' }}>{error}</div>}
       <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
