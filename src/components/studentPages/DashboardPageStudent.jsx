@@ -56,7 +56,7 @@ const DashboardPage = () => {
         <h1>Welcome to the Dashboard</h1>
         <p>Select an option below to manage the system:</p>
         <div className="dashboard-buttons">
-          <button
+          {/* <button
             onClick={() => handleNavigation('/signup')}
             className="dashboard-button"
           >
@@ -73,7 +73,7 @@ const DashboardPage = () => {
             className="dashboard-button"
           >
             Create Course
-          </button>
+          </button> */}
           <button
             onClick={() => handleNavigation('/courses')}
             className="dashboard-button"

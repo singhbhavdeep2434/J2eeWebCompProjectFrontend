@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/ShowEnrollments.css'; 
-import NavBar from '../NavBar';
+import NavBar from '../NavBars/NavBar';
 
 const ShowEnrollmentsPage = () => {
   const [enrollments, setEnrollments] = useState([]);

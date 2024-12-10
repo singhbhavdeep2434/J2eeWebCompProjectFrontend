@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchCourses } from '../services/courseService';
 import '../styles/CoursesPage.css'; 
-import NavBar from '../NavBar';
+import NavBar from '../NavBars/NavBar';
 
 const CoursesPage = () => {
   const [courses, setCourses] = useState([]);

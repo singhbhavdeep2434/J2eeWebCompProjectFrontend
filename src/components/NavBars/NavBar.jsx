@@ -8,7 +8,7 @@ const NavBar = ({ handleLogout }) => {
         <h2>Dashboard</h2>
         <div className="navbar-links">
           <Link to="/dashboard" className="nav-link">Home</Link>
-          <Link to="/create-user" className="nav-link">Create User</Link>
+          <Link to="/signup" className="nav-link">Create User</Link>
           <Link to="/show-users" className="nav-link">Show Users</Link>
           <Link to="/create-course" className="nav-link">Create Course</Link>
           <Link to="/courses" className="nav-link">Courses</Link>

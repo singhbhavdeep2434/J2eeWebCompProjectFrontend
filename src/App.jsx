@@ -7,6 +7,7 @@ import DashboardPage from './components/pages/DashboardPage';
 import ShowUsers from './components/pages/ShowUsers';
 import CreateCoursePage from './components/pages/CreateCoursePage';
 import ShowEnrollmentsPage from './components/pages/ShowEnrollmentsPage';
+import CoursesPageStudent from './components/studentPages/CoursesPageStudent';
 
 const App = () => {
 
@@ -25,11 +26,16 @@ const App = () => {
         <Route path="/signup" element={<SignUpPage />} />  {/* Changed to /signup */}
 
         {/* Courses page (protected route) */}
-        <Route 
-          path="/courses" 
-          element={
-            <PrivateRoute>
+        {/* <Route path="/courses" element={
+          <PrivateRoute>
               <CoursesPage />
+            </PrivateRoute>
+          } 
+        /> */}
+
+        <Route path="/courses" element={
+          <PrivateRoute>
+              <CoursesPageStudent />
             </PrivateRoute>
           } 
         />
