@@ -28,3 +28,38 @@ export const fetchUsers = async (token) => {
     throw error;
   }
 };
+
+// userService.js
+
+export const updateUser = async (userId, userData, token) => {
+    const response = await fetch(`http://localhost:8089/user/${userId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify(userData),
+    });
+  
+    if (!response.ok) {
+      throw new Error('Failed to update user');
+    }
+  
+    return await response.json();
+  };
+  
+  export const deleteUser = async (userId, token) => {
+    const response = await fetch(`http://localhost:8089/user/${userId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+  
+    if (!response.ok) {
+      throw new Error('Failed to delete user');
+    }
+  
+    return await response.json();
+  };
+  

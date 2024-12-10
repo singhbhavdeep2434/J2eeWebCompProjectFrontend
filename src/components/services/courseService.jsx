@@ -28,3 +28,5 @@ export const fetchCourses = async (token) => {
     throw error;
   }
 };
+
+

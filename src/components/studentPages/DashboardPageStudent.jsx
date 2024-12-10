@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/DashboardPage.css'; 
-import NavBar from '../NavBars/NavBar';
+import NavBarStudent from '../NavBars/NavBarStudent';
 
-const DashboardPage = () => {
+const DashboardPageStudent = () => {
   const navigate = useNavigate();
 
   const parseJwt = (token) => {
@@ -49,7 +49,7 @@ const DashboardPage = () => {
   return (
     <div>
       {/* Pass handleLogout to NavBar */}
-      <NavBar handleLogout={handleLogout} />
+      <NavBarStudent handleLogout={handleLogout} />
 
       {/* Main Content */}
       <div className="dashboard-container">
@@ -81,10 +81,10 @@ const DashboardPage = () => {
             Show All Courses
           </button>
           <button
-            onClick={() => handleNavigation('/show-enrollments')}
+            onClick={() => handleNavigation('/my-enrollments')}
             className="dashboard-button"
           >
-            Show All Enrollments
+            MyEnrollments
           </button>
         </div>
       </div>
@@ -92,4 +92,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default DashboardPageStudent;

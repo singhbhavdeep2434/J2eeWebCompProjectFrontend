@@ -14,10 +14,39 @@ const LoginPage = () => {
     setError(null);
 
     try {
-      const token = await loginUser(username, password);
+      // const token = await loginUser(username, password);
+      // console.log(token);
+
+      const response = await loginUser(username, password);
+      console.log(response);
+
+      const token  = response.token;
+      const user = response.role;
       console.log(token);
+      console.log(user);
+
       localStorage.setItem('authToken', token);
-      navigate('/dashboard');
+      // localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('user', user);
+
+      const role = user;
+
+      if (role === 'ADMIN') {
+        navigate('/admin-dashboard');
+      } 
+      else if (role === 'PROFESSOR') {
+        navigate('/professor-dashboard');
+      } 
+      else if (role === 'STUDENT') {
+        navigate('/student-dashboard');
+      } 
+      else {
+        throw new Error('Unknown role received');
+      }
+
+
+
+      // navigate('/dashboard');
     } catch (error) {
       setError('An error occurred during login.');
       console.error('Login error:', error);

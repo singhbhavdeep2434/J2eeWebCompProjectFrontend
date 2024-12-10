@@ -10,7 +10,7 @@ const CreateCoursePage = () => {
   const [courseName, setCourseName] = useState('');
   const [department, setDepartment] = useState('');
   const [semester, setSemester] = useState('');
-  const [credits, setCredits] = useState(0);
+  const [credits, setCredits] = useState();
   const [error, setError] = useState(null);
   const [courseData, setCourseData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -106,6 +106,24 @@ const CreateCoursePage = () => {
             style={inputStyle}
           />
         </div>
+
+        {/* <div>
+              <select
+                placeholder="Semester"
+                value={semester}
+                onChange={(e) => setSemester(e.target.value)}
+                className="input"
+                required
+              >
+                
+                <option value="Semester 1">Semester 1</option>
+                <option value="Semester 2">Semester 2</option>
+                <option value="Semester 3">Semester 3</option>
+              </select>
+            </div> */}
+
+
+
         <div>
           <input
             type="number"

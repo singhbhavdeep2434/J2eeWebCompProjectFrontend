@@ -12,7 +12,7 @@ export const loginUser = async (username, password) => {
     }
 
     // Return the plain text token
-    return await response.text();
+    return await response.json();
   } catch (error) {
     console.error('Login error:', error);
     throw error;

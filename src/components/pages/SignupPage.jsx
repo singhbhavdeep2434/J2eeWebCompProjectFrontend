@@ -9,7 +9,7 @@ const SignupPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [role, setRole] = useState('STUDENT'); // Default role is STUDENT
+  const [role, setRole] = useState(' '); // Default role is STUDENT
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
