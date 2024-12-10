@@ -29,19 +29,26 @@ const App = () => {
         <Route path="/signup" element={<SignUpPage />} />  {/* Changed to /signup */}
 
         {/* Courses page (protected route) */}
-        {/* <Route path="/courses" element={
+        <Route path="/courses" element={
           <PrivateRoute>
               <CoursesPage />
             </PrivateRoute>
           } 
-        /> */}
+        />
 
-        <Route path="/courses" element={
+        <Route path="/student-courses" element={
           <PrivateRoute>
               <CoursesPageStudent />
             </PrivateRoute>
           } 
         />
+{/* 
+        <Route path="/courses" element={
+          <PrivateRoute>
+              <CoursesPageStudent />
+            </PrivateRoute>
+          } 
+        /> */}
 
         <Route
           path="/admin-dashboard"

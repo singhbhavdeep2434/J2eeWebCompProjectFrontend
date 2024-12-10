@@ -40,42 +40,51 @@ const CoursesPage = () => {
 
   if (isLoading) {
     return (
-      <div className="container">
+      <div className="loading-container">
         <p>Loading courses...</p>
       </div>
     );
   }
 
   return (
-    <div className="container">
+    <div className="courses-page-wrapper">
       <NavBar handleLogout={handleLogout} />
-      <div className="card">
-        <div className="card-header">
-          {/* <h2 className="card-title">Courses</h2> */}
-          {/* <button onClick={handleLogout}>Logout</button> */}
-        </div>
-        <div className="card-content">
-          {error && (
-            <div className="alert">
-              <p className="alert-description">{error}</p>
-            </div>
-          )}
-
-          {courses.length === 0 ? (
-            <p>No courses available.</p>
-          ) : (
-            <div className="grid">
+      <div className="courses-table-wrapper">
+        {error && (
+          <div className="error-alert">
+            <p className="error-message">{error}</p>
+          </div>
+        )}
+        {courses.length === 0 ? (
+          <p className="no-courses-message">No courses available.</p>
+        ) : (
+          <table className="courses-table">
+            <thead>
+              <tr>
+                <th>Course Name</th>
+                <th>Department</th>
+                <th>Semester</th>
+                <th>Credits</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
               {courses.map((course) => (
-                <div key={course.id} className="course-card">
-                  <h3>{course.courseName}</h3>
-                  <p>{course.department}</p>
-                  <p>{course.semester}</p>
-                  <p>Credits: {course.credits}</p>
-                </div>
+                <tr key={course.id}>
+                  <td>{course.courseName}</td>
+                  <td>{course.department}</td>
+                  <td>{course.semester}</td>
+                  <td>{course.credits}</td>
+                  <td>
+                    <button className="action-button view-btn">View</button>
+                    <button className="action-button edit-btn">Edit</button>
+                    <button className="action-button delete-btn">Delete</button>
+                  </td>
+                </tr>
               ))}
-            </div>
-          )}
-        </div>
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );

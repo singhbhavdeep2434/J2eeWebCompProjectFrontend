@@ -45,21 +45,21 @@ const ShowEnrollmentsPage = () => {
   }, [navigate]);
 
   return (
-    <div className="container">
-        <NavBar/>
-      <div className="card">
+    <div className="enrollments-page">
+      <NavBar />
+      <div className="cardd">
         <div className="card-header">
           <h2 className="card-title">Enrollments</h2>
         </div>
-        <div className="card-content">
+        <div className="card-body">
           {isLoading ? (
-            <p>Loading enrollments...</p>
+            <div className="loading-indicator">Loading enrollments...</div>
           ) : error ? (
-            <div className="alert">{error}</div>
+            <div className="error-message">{error}</div>
           ) : enrollments.length === 0 ? (
-            <p>No enrollments found.</p>
+            <p className="no-enrollments-message">No enrollments found.</p>
           ) : (
-            <table className="table">
+            <table className="enrollment-table">
               <thead>
                 <tr>
                   <th>ID</th>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../NavBars/NavBar';
+import '../styles/CreateCoursePage.css'; // New CSS file for styling
 
 const CreateCoursePage = () => {
   const navigate = useNavigate();
@@ -61,117 +62,81 @@ const CreateCoursePage = () => {
   };
 
   return (
-    <div style={{ padding: '20px', textAlign: 'center' }}>
-        <NavBar/>
-      <h1>Create a New Course</h1>
-      {error && <div style={{ color: 'red' }}>{error}</div>}
-      <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
-        <div>
-          <input
-            type="text"
-            placeholder="Course Code"
-            value={courseCode}
-            onChange={(e) => setCourseCode(e.target.value)}
-            required
-            style={inputStyle}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            placeholder="Course Name"
-            value={courseName}
-            onChange={(e) => setCourseName(e.target.value)}
-            required
-            style={inputStyle}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            placeholder="Department"
-            value={department}
-            onChange={(e) => setDepartment(e.target.value)}
-            required
-            style={inputStyle}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            placeholder="Semester"
-            value={semester}
-            onChange={(e) => setSemester(e.target.value)}
-            required
-            style={inputStyle}
-          />
-        </div>
+    <div className="create-course-page">
+      <NavBar />
+      <div className="form-container">
+        <h1>Create a New Course</h1>
+        {error && <div className="error-message">{error}</div>}
+        
+        <form onSubmit={handleSubmit} className="course-form">
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Course Code"
+              value={courseCode}
+              onChange={(e) => setCourseCode(e.target.value)}
+              required
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Course Name"
+              value={courseName}
+              onChange={(e) => setCourseName(e.target.value)}
+              required
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Department"
+              value={department}
+              onChange={(e) => setDepartment(e.target.value)}
+              required
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Semester"
+              value={semester}
+              onChange={(e) => setSemester(e.target.value)}
+              required
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="number"
+              placeholder="Credits"
+              value={credits}
+              onChange={(e) => setCredits(Number(e.target.value))}
+              required
+              className="input-field"
+            />
+          </div>
+          <button type="submit" className="submit-btn">
+            {isLoading ? 'Creating Course...' : 'Create Course'}
+          </button>
+        </form>
 
-        {/* <div>
-              <select
-                placeholder="Semester"
-                value={semester}
-                onChange={(e) => setSemester(e.target.value)}
-                className="input"
-                required
-              >
-                
-                <option value="Semester 1">Semester 1</option>
-                <option value="Semester 2">Semester 2</option>
-                <option value="Semester 3">Semester 3</option>
-              </select>
-            </div> */}
-
-
-
-        <div>
-          <input
-            type="number"
-            placeholder="Credits"
-            value={credits}
-            onChange={(e) => setCredits(Number(e.target.value))}
-            required
-            style={inputStyle}
-          />
-        </div>
-        <button type="submit" style={buttonStyle}>
-          {isLoading ? 'Creating Course...' : 'Create Course'}
-        </button>
-      </form>
-
-      {courseData && (
-        <div style={{ marginTop: '20px' }}>
-          <h3>Course Created Successfully</h3>
-          <p><strong>Course Code:</strong> {courseData.courseCode}</p>
-          <p><strong>Course Name:</strong> {courseData.courseName}</p>
-          <p><strong>Department:</strong> {courseData.department}</p>
-          <p><strong>Semester:</strong> {courseData.semester}</p>
-          <p><strong>Credits:</strong> {courseData.credits}</p>
-        </div>
-      )}
+        {courseData && (
+          <div className="course-info">
+            <h3>Course Created Successfully</h3>
+            <p><strong>Course Code:</strong> {courseData.courseCode}</p>
+            <p><strong>Course Name:</strong> {courseData.courseName}</p>
+            <p><strong>Department:</strong> {courseData.department}</p>
+            <p><strong>Semester:</strong> {courseData.semester}</p>
+            <p><strong>Credits:</strong> {courseData.credits}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
-};
-
-// Styles for form and button
-const inputStyle = {
-  padding: '10px',
-  margin: '10px 0',
-  width: '200px',
-  fontSize: '16px',
-  borderRadius: '5px',
-  border: '1px solid #ccc',
-};
-
-const buttonStyle = {
-  marginTop: '10px',
-  padding: '10px 20px',
-  fontSize: '16px',
-  cursor: 'pointer',
-  backgroundColor: '#4CAF50',
-  color: '#fff',
-  border: 'none',
-  borderRadius: '5px',
 };
 
 export default CreateCoursePage;

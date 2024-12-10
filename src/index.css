@@ -1,117 +1,130 @@
-/* Global Root Styles */
+/* Global Styles */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #333;
+  background-color: #f7f9fc;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary-color: #4caf50;
+  --secondary-color: #f0f0f0;
+  --button-hover: #45a049;
+  --danger-color: #e74c3c;
+  --text-dark: #2c3e50;
+  --text-light: #ecf0f1;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
-}
-
-/* Remove flex centering from body */
-body {
+/* General reset */
+* {
   margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #f7f7f7;
-}
-
-/* Card-specific styles remain unchanged */
-
-/* Login Page Container */
-.login-container {
-  display: flex; /* Flex for vertical and horizontal centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  min-height: 100vh; /* Ensure it takes full height */
-  padding: 0 20px; /* Add some space from the edges */
-}
-
-/* Card styling */
-.card {
-  width: 400px; /* Increased width for better layout on desktop */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  padding: 2rem; /* Added more padding inside the card */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Increased shadow for better contrast */
-}
-
-/* Card Header */
-.card-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-/* Card Title */
-.card-title {
-  font-size: 2rem; /* Increased font size for better visibility */
-  font-weight: bold;
-  color: #333; /* Darker color for better contrast */
-}
-
-/* Form Group styling */
-.form-group {
-  margin-bottom: 1.5rem; /* Increased space between input fields */
-}
-
-/* Input fields styling */
-.input {
-  width: 100%;
-  padding: 0.9rem; /* Increased padding for easier typing */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  box-sizing: border-box; /* Ensures padding doesn't affect width */
-}
-
-/* Button styling */
-.button {
-  width: 100%;
-  padding: 1rem; /* Larger padding for better button size */
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.1rem; /* Slightly larger font size */
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-/* Button hover effect */
-.button:hover {
-  background-color: #0056b3;
-}
-
-/* Alert box styling */
-.alert {
-  margin-bottom: 1.5rem;
-  padding: 0.9rem;
-  background-color: #ffe5e5;
-  color: #d9534f;
-  border: 1px solid #d9534f;
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* Responsive Design for larger screens */
-@media (min-width: 768px) {
-  .login-container {
-    padding: 0 50px; /* Add more padding for larger screens */
+body {
+  margin: 0;
+  font-size: 16px;
+  background-color: var(--secondary-color);
+}
+
+/* Header Styles */
+header {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  color: var(--text-light);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Card Styles */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  header {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .card {
+    padding: 1rem;
   }
 }

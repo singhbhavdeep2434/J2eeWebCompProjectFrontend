@@ -1,0 +1,23 @@
+.navbar {
+    padding: 0.8rem 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    color: #007bff;
+    text-align: left;
+  }
+  
+  .navbar-nav {
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    padding: 0.5rem;
+  }
+  
+  .btn-primary {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+  }
+  
