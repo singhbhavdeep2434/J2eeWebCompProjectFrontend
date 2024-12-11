@@ -14,3 +14,13 @@
 .btn:hover {
   transform: scale(1.05);
 }
+.dashboard-buttons-students {
+  /* align-items: center; */
+  margin: 0;
+  position: absolute;
+  top: 22%;
+  left:42%;
+}
+.dashboard-container h1{
+  padding-top: 20px;
+}

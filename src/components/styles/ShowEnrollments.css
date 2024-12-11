@@ -93,3 +93,16 @@
   overflow-x: auto;  /* Allows horizontal scrolling if necessary */
   width: 100%;       /* Ensures container takes the full width */
 }
+.action-btn.save-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.action-btn.save-btn:hover {
+  background-color: #45a049;
+}
