@@ -85,7 +85,7 @@ const NavBar = ({ handleLogout }) => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/show-enrollments" className="nav-link">
+              <NavLink to="/my-enrollments" className="nav-link">
                 <button className="btn btn-outline-primary mx-2">
                   Enrollments
                 </button>
