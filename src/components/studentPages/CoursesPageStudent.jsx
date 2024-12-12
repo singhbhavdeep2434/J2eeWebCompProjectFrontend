@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/CoursesPageStudent.css';
 import NavBar from '../NavBars/NavBar';
 
-const CoursesPage = () => {
+const CoursesPageStudent = () => {
   const [courses, setCourses] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -112,4 +112,4 @@ const CoursesPage = () => {
   );
 };
 
-export default CoursesPage;
+export default CoursesPageStudent;

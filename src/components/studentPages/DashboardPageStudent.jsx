@@ -55,7 +55,7 @@ const DashboardPageStudent = () => {
       <div className="dashboard-container">
         <h1>Welcome to the Dashboard</h1>
         <p>Select an option below to manage the system:</p>
-        <div className="dashboard-buttons">
+        <div className="dashboard-buttons-students">
           {/* <button
             onClick={() => handleNavigation('/signup')}
             className="dashboard-button"
